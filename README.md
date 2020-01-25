@@ -14,7 +14,7 @@ resource_types:
 - name: concourse-git-semver-tag
   type: docker-image
   source:
-    repository: laurentverbruggen/concourse-git-semver-tag-resource
+    repository: johnharvey/concourse-git-semver-tag-resource
 ```
 
 ## Source Configuration
