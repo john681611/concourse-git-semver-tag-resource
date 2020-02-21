@@ -22,7 +22,8 @@ prepare_repository "$destination" "$payload"
 
 # return latest tag on this branch
 branch=$(jq -r '.source.branch // ""' < "$payload")
-tags=$(sorted_tags $branch)
+filter=$(jq -r '.source.filter // ""' < "$payload")
+tags=$(sorted_tags $branch $filter)
 
 if [ -z "$tags" ]; then
   initial_version=$(jq -r '.source.initial_version // "0.0.0"' < "$payload")

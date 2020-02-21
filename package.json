@@ -4,7 +4,7 @@
   "description": "A resource for managing a version number on a git repository by using tags.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",

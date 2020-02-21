@@ -25,6 +25,8 @@ resource_types:
 
 * `branch`: *Required.* The branch all tags were made on.
 
+* `filter`: regex filter for all tags (`\\d+\\.\\d+\\.\\d+$` can be used for x.x.x)
+
 * `private_key`: *Optional.* The SSH private key to use when pulling from/pushing to to the repository.
 
 * `username`: *Optional.* Username for HTTP(S) auth when pulling/pushing.

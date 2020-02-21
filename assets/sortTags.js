@@ -1,5 +1,12 @@
 const semver=require("semver");
-const versions=process.argv.slice(1);
-    versions.filter(semver.valid)
-      .sort((a, b) => semver.compare(a, b))
-      .forEach(x => console.log(x));
+
+
+const filterTags = (versions=[],regex="") => {
+  return versions.filter(semver.valid)
+    .filter(x => x.match(new RegExp(regex)))
+    .sort((a, b) => semver.compare(a, b))
+}
+
+module.exports = {
+  filterTags
+}
