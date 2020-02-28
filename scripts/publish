@@ -1,6 +1,8 @@
 #!/bin/bash
-
 set -e
+# Publish Dev version:  sh scripts/publish
+# Publish specific version:  sh scripts/publish <version>
+# Publish specific version & latest:  sh scripts/publish <version> true
 
 not_installed() {
   ! command -v $1 > /dev/null 2>&1
