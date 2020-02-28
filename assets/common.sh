@@ -91,7 +91,7 @@ sorted_tags() {
   # return only those tags that are recognised by semver as versions
   local branch="$1"
   local filter="$2"
-  NODE_PATH=/usr/lib/node_modules node -e 'require("./sortTags").filterTags(process.argv.slice(1), "'$filter'").forEach(x => console.log(x));' $(git tag --merged "$branch" -l "*" 2>/dev/null) 
+  NODE_PATH=/usr/lib/node_modules node -e 'require("'$(dirname $0)'/sortTags").filterTags(process.argv.slice(1), "'$filter'").forEach(x => console.log(x));' $(git tag --merged "$branch" -l "*" 2>/dev/null) 
 }
 
 bump_version() {
