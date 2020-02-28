@@ -17,8 +17,13 @@ if not_installed docker; then
   echo "    docker login"
   exit 1
 fi
-
 name=johnharvey/concourse-git-semver-tag-resource
 cd $git_semver_tag_resource_dir
-docker build --rm . -t $name
-docker push $name
+latest=$2
+if [ "$latest" == true  ]; then
+  docker build . -t $name:${1:-dev} -t $name:latest
+  docker push $name
+else
+  docker build . -t $name:${1:-dev}
+  docker push $name:${1:-dev}
+fi
